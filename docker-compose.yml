@@ -28,6 +28,15 @@ services:
       restart_policy:
         condition: on-failure
 
+  app:
+    build:
+       context: ./
+    command: gunicorn app:app --bind 0.0.0.0:5000 -k uvicorn.workers.UvicornWorker
+    expose:
+      - 5000
+    networks:
+      timescale_network:
+
 # Creates a named volume to persist our database data
 volumes:
   timescale_volume:
