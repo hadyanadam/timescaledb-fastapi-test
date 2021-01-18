@@ -10,6 +10,7 @@ WORKDIR $WORKDIR
 RUN pip install --upgrade pip
 RUN pip install pipenv
 COPY ./Pipfile ./Pipfile.lock $WORKDIR/
+RUN pipenv lock
 RUN pipenv install --system --deploy
 # COPY ./requirements.txt $WORKDIR/requirements.txt
 # RUN pip install -r requirements.txt

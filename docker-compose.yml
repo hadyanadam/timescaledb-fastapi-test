@@ -32,8 +32,10 @@ services:
     build:
        context: ./
     command: gunicorn app:app --bind 0.0.0.0:5000 -k uvicorn.workers.UvicornWorker
-    expose:
-      - 5000
+    # expose:
+    #   - 5000d
+    ports:
+      - 0.0.0.0:5000:5000
     networks:
       timescale_network:
 
@@ -44,4 +46,4 @@ volumes:
 # Joins our external network
 networks:
   timescale_network:
-    external: true
+    # external: true

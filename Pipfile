@@ -11,6 +11,8 @@ python-dotenv = "*"
 uvicorn = "*"
 psycopg2-binary = "*"
 gunicorn = "*"
+uvloop = "*"
+httptools = "*"
 
 [dev-packages]
 

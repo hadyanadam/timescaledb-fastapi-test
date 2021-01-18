@@ -22,3 +22,11 @@ class SensorData(Base):
     sensor_id = Column(Integer, ForeignKey('sensors.id'), nullable=False)
     temperature = Column(Float)
     cpu = Column(Float)
+
+class User(Base):
+    __tablename__ = 'users'
+
+    id = Column(Integer, primary_key=True, index=True)
+    username = Column(String(20), nullable=False)
+    password = Column(String(15), nullable=False)
+
